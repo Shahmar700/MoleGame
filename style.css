@@ -106,6 +106,21 @@ body {
 
 
 /* Responsive design */
+@media screen and (max-width: 425px) {
+  .container{
+    width: 90%;
+  }
+  .game_container{
+    border: 1px solid red;
+    justify-content: space-around;
+  }
+  .land {
+    position: relative;
+    width: 42%;
+    height: 110px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .game_container{
     border: 1px solid red;
