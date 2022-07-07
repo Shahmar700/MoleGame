@@ -27,6 +27,7 @@ const randomTime = (min, max) => {
   return time;
 };
 
+//Yuvadan çıxma funksiyası, selected clası elave et (selected clasi köstəbəyi yuxarı qaldırmaq üçün)
 const up = () => {
   const mole = randomMole();
   const upTime = randomTime(650, 950);
@@ -39,6 +40,7 @@ const up = () => {
   }, upTime);
 };
 
+//Zamanı başlat və 4 saniyədən az qaldıqda rəngi timmer rəngini qırmızı et
 const startTime = () => {
   if (!timeIsUp) {
     if (time < 4) {
@@ -53,6 +55,7 @@ const startTime = () => {
   }
 };
 
+// Oyunu başlat
 const startGame = () => {
   time = 15;
   score = 0;
@@ -68,9 +71,9 @@ const startGame = () => {
   }, 15000);
 };
 
+// Köstəbəyə vuranda
 const hit = (e) => {
   if (e.target.classList.contains("selected")) {
-    document.body.classList.add("green");
     score++;
     goal();
     e.target.classList.remove("selected");
@@ -78,7 +81,7 @@ const hit = (e) => {
   scoreText.textContent = score;
 };
 
-// goal funskiyasi --> ugurlu olanda background rengi deyis
+// goal funksiyası --> uğurlu olanda (hər dəfə xal artanda) background rəngini dəyiş
 const goal = () => {
   document.body.classList.add("green");
   setTimeout(() => {
@@ -86,6 +89,7 @@ const goal = () => {
   }, 150);
 };
 
+// hər bir köstəbəyə "click" eventi olanda hit funksiyasını çağır
 moles.forEach((mole) => {
   mole.addEventListener("click", hit);
 });
