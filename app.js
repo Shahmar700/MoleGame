@@ -29,7 +29,7 @@ const randomTime = (min, max) => {
 
 const up = () => {
   const mole = randomMole();
-  const upTime = randomTime(750, 1000);
+  const upTime = randomTime(650, 950);
   mole.classList.add("selected");
   setTimeout(() => {
     mole.classList.remove("selected");
@@ -70,10 +70,20 @@ const startGame = () => {
 
 const hit = (e) => {
   if (e.target.classList.contains("selected")) {
+    document.body.classList.add("green");
     score++;
+    goal();
     e.target.classList.remove("selected");
   }
   scoreText.textContent = score;
+};
+
+// goal funskiyasi --> ugurlu olanda background rengi deyis
+const goal = () => {
+  document.body.classList.add("green");
+  setTimeout(() => {
+    document.body.classList.remove("green");
+  }, 150);
 };
 
 moles.forEach((mole) => {

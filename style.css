@@ -98,3 +98,10 @@ body {
 .mole.selected {
   top: -45px;
 }
+
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
